@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>data_update</title>
+<style>
+  :root{
+    --ink:#1C2B3A;
+    --paper:#F6F3EC;
+    --paper-warm:#EFE9DA;
+    --gold:#B8862E;
+    --teal:#2E5E5A;
+    --line:#D8D0BC;
+    --muted:#6B6558;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Iowan Old Style","Noto Serif KR","Nanum Myeongjo",Georgia,serif;
+    line-height:1.7;
+  }
+  .hero{
+    padding:4rem 1.5rem 2.5rem;
+    text-align:center;
+    border-bottom:1px solid var(--line);
+    position:relative;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:0; left:0; right:0;
+    height:6px;
+    background:linear-gradient(90deg, var(--teal), var(--gold));
+  }
+  .eyebrow{
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    font-size:.72rem;
+    color:var(--muted);
+    margin-bottom:1.2rem;
+  }
+  h1{
+    font-size:clamp(1.7rem, 3.6vw, 2.4rem);
+    font-weight:600;
+    margin:0 auto;
+    max-width:820px;
+    letter-spacing:-0.01em;
+  }
+  .sub{
+    margin-top:1rem;
+    font-size:1rem;
+    color:var(--muted);
+    font-family:"Helvetica Neue",Arial,sans-serif;
+  }
+  .back{
+    display:inline-block;
+    margin-top:1.4rem;
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    font-size:.85rem;
+    color:var(--teal);
+    text-decoration:none;
+    border-bottom:1px solid var(--gold);
+  }
+  .back:hover{color:var(--gold);}
+  main{
+    max-width:920px;
+    margin:0 auto;
+    padding:3rem 1.5rem 6rem;
+  }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    font-size:.9rem;
+    background:var(--paper-warm);
+  }
+  caption{
+    caption-side:top;
+    text-align:left;
+    font-family:"Iowan Old Style","Noto Serif KR",Georgia,serif;
+    font-style:italic;
+    color:var(--muted);
+    padding-bottom:.8rem;
+  }
+  thead th{
+    text-align:left;
+    padding:.75rem 1rem;
+    background:var(--teal);
+    color:#F6F3EC;
+    font-weight:600;
+    letter-spacing:.02em;
+  }
+  tbody td{
+    padding:.7rem 1rem;
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+  }
+  tbody tr:nth-child(even){background:#F1ECDD;}
+  tbody tr:hover{background:#E7DFC5;}
+  td.license{
+    white-space:nowrap;
+    color:var(--teal);
+    font-weight:600;
+  }
+  td.source a{
+    color:var(--ink);
+    text-decoration:none;
+    border-bottom:1px solid var(--gold);
+  }
+  td.source a:hover{color:var(--gold);}
+  footer{
+    text-align:center;
+    padding:2.5rem 1.5rem;
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    font-size:.8rem;
+    color:var(--muted);
+    border-top:1px solid var(--line);
+  }
+  @media (max-width:560px){
+    table, thead, tbody, th, td, tr{display:block;}
+    thead{display:none;}
+    tbody tr{
+      background:var(--paper-warm);
+      margin-bottom:1rem;
+      border:1px solid var(--line);
+      border-radius:4px;
+      padding:.4rem 0;
+    }
+    tbody td{
+      border-bottom:none;
+      padding:.35rem 1rem;
+    }
+    tbody td::before{
+      content:attr(data-label);
+      display:block;
+      font-size:.72rem;
+      color:var(--gold);
+      text-transform:uppercase;
+      letter-spacing:.05em;
+      margin-bottom:.15rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="eyebrow">Strategy · Marketing · AI Data Science</div>
+  <h1>데이터 업데이트</h1>
+  <p class="sub">수업과 실습에 활용할 수 있는 공개 라이선스 데이터셋 목록입니다.</p>
+  <a class="back" href="book_adams.html">← book_adams로 돌아가기</a>
+</div>
+
+<main>
+  <table>
+    <caption>공개 라이선스 데이터셋 목록</caption>
+    <thead>
+      <tr>
+        <th>데이터셋</th>
+        <th>오픈 라이선스</th>
+        <th>출처</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="데이터셋">Airlines Customer Satisfaction</td>
+        <td data-label="오픈 라이선스" class="license">CC0 Public Domain</td>
+        <td data-label="출처" class="source"><a href="https://www.kaggle.com/datasets/sjleshrac/airlines-customer-satisfaction" target="_blank" rel="noopener">kaggle.com ↗</a></td>
+      </tr>
+      <tr>
+        <td data-label="데이터셋">Amazon Fine Food Review</td>
+        <td data-label="오픈 라이선스" class="license">Apache 2.0</td>
+        <td data-label="출처" class="source"><a href="https://www.kaggle.com/datasets/mdraselsarker/amazon-fine-food-reviews" target="_blank" rel="noopener">kaggle.com ↗</a></td>
+      </tr>
+      <tr>
+        <td data-label="데이터셋">Apple iPhone Customer Review</td>
+        <td data-label="오픈 라이선스" class="license">CC0 Public Domain</td>
+        <td data-label="출처" class="source"><a href="https://www.kaggle.com/datasets/mrmars1010/iphone-customer-reviews-nlp" target="_blank" rel="noopener">kaggle.com ↗</a></td>
+      </tr>
+      <tr>
+        <td data-label="데이터셋">Credit Card Customers</td>
+        <td data-label="오픈 라이선스" class="license">CC0 Public Domain</td>
+        <td data-label="출처" class="source"><a href="https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers" target="_blank" rel="noopener">kaggle.com ↗</a></td>
+      </tr>
+      <tr>
+        <td data-label="데이터셋">Employee Turnover</td>
+        <td data-label="오픈 라이선스" class="license">CC0 Public Domain</td>
+        <td data-label="출처" class="source"><a href="https://www.kaggle.com/datasets/marikastewart/employee-turnover" target="_blank" rel="noopener">kaggle.com ↗</a></td>
+      </tr>
+      <tr>
+        <td data-label="데이터셋">Marketing AB</td>
+        <td data-label="오픈 라이선스" class="license">ODbL 1.0</td>
+        <td data-label="출처" class="source"><a href="https://www.kaggle.com/datasets/rahelederakhshande/marketing-ab" target="_blank" rel="noopener">kaggle.com ↗</a></td>
+      </tr>
+      <tr>
+        <td data-label="데이터셋">Marketing Campaign</td>
+        <td data-label="오픈 라이선스" class="license">CC0 Public Domain</td>
+        <td data-label="출처" class="source"><a href="https://www.kaggle.com/datasets/shashankshukla123123/marketing-campaign" target="_blank" rel="noopener">kaggle.com ↗</a></td>
+      </tr>
+      <tr>
+        <td data-label="데이터셋">Retail Store Performance</td>
+        <td data-label="오픈 라이선스" class="license">Apache 2.0</td>
+        <td data-label="출처" class="source"><a href="https://www.kaggle.com/datasets/pereprosov/retail-store-performance" target="_blank" rel="noopener">kaggle.com ↗</a></td>
+      </tr>
+      <tr>
+        <td data-label="데이터셋">Sales and Satisfaction</td>
+        <td data-label="오픈 라이선스" class="license">CC BY-SA 4.0</td>
+        <td data-label="출처" class="source"><a href="https://www.kaggle.com/datasets/matinmahmoudi/sales-and-satisfaction" target="_blank" rel="noopener">kaggle.com ↗</a></td>
+      </tr>
+      <tr>
+        <td data-label="데이터셋">TripAdvisor Hotel Reviews</td>
+        <td data-label="오픈 라이선스" class="license">CC0 Public Domain</td>
+        <td data-label="출처" class="source"><a href="https://www.kaggle.com/datasets/thedevastator/tripadvisor-hotel-reviews" target="_blank" rel="noopener">kaggle.com ↗</a></td>
+      </tr>
+      <tr>
+        <td data-label="데이터셋">Turkish Students 2025 YKS Dataset</td>
+        <td data-label="오픈 라이선스" class="license">MIT</td>
+        <td data-label="출처" class="source"><a href="https://www.kaggle.com/datasets/morveth/turkish-students-2025-yks-dataset-tyt-and-ayt" target="_blank" rel="noopener">kaggle.com ↗</a></td>
+      </tr>
+      <tr>
+        <td data-label="데이터셋">Walmart Cleaned Data</td>
+        <td data-label="오픈 라이선스" class="license">CC0 Public Domain</td>
+        <td data-label="출처" class="source"><a href="https://www.kaggle.com/datasets/ujjwalchowdhury/walmartcleaned" target="_blank" rel="noopener">kaggle.com ↗</a></td>
+      </tr>
+    </tbody>
+  </table>
+</main>
+
+<footer>
+  전략, 마케팅, 그리고 AI 데이터과학 · data_update
+</footer>
+
+</body>
+</html>
